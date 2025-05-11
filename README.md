@@ -47,11 +47,11 @@ A feature-rich iOS application demonstrating user authentication, offline data m
 - **UI**: Storyboards + UIKit (Modern styling)
 - **Local DB**: Core Data
 - **Authentication**: Firebase Google Sign-In
-- **Notifications**: Firebase Cloud Messaging (FCM)
+- **Notifications**: Local notification 
 - **PDF Viewing**: PDFKit / 3rd-party viewer
 - **Image Handling**: UIImagePickerController
 - **Permissions**: Camera & Photo Library with runtime checks
-- **Theme Support**: Light & Dark Mode compatible
+- **Theme Support**: Light Mode compatible
 
 ---
 
