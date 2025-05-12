@@ -23,7 +23,7 @@ class PDFViewController: UIViewController {
     
     func loadPDF() {
         // Replace with your PDF URL
-        if let pdfURL = URL(string: "https://fssservices.bookxpert.co/GeneratedPDF/Companies/nadc/2024-2025/BalanceSheet.pdf") {
+        if let pdfURL = URL(string: Endpoint.pdfURL) {
             let request = URLRequest(url: pdfURL)
             webView.load(request)
         } else {

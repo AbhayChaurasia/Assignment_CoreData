@@ -40,7 +40,15 @@ class ViewController: UIViewController {
 
     // MARK: - Actions
     @IBAction func googleSignInAction(_ sender: UIButton) {
-        viewModel.performGoogleSignIn(from: self)
+         
+        
+        viewModel.onUserSaved = {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+                vc.refreshUser = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
+    viewModel.performGoogleSignIn(from: self)
     }
 
     @IBAction func pdfAction(_ sender: UIButton) {

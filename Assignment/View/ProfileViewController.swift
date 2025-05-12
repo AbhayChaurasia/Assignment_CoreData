@@ -44,7 +44,9 @@ class ProfileViewController: UIViewController {
         }
         
     }
-
+    @IBAction func editImageAction(_ sender: UIButton) {
+        self.selectImage()
+    }
     @IBAction func logoutAction(_ sender: UIButton) {
         
         let firebaseAuth = Auth.auth()
@@ -99,26 +101,35 @@ extension ProfileViewController:  UIImagePickerControllerDelegate, UINavigationC
 
 
     func selectImage() {
-           let actionSheet = UIAlertController(title: "Select Image", message: nil, preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: "Select Image", message: nil, preferredStyle: .actionSheet)
 
-           // Camera Option
-           if UIImagePickerController.isSourceTypeAvailable(.camera) {
-               actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
-                   self.presentImagePicker(sourceType: .camera)
-                   self.refreshUser = false
-               }))
-           }
+        // Camera Option
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+                self.presentImagePicker(sourceType: .camera)
+                self.refreshUser = false
+            }))
+        }
 
-           // Photo Library Option
-           actionSheet.addAction(UIAlertAction(title: "Photos", style: .default, handler: { _ in
-               self.presentImagePicker(sourceType: .photoLibrary)
-               self.refreshUser = false
-           }))
+        // Photo Library Option
+        actionSheet.addAction(UIAlertAction(title: "Photos", style: .default, handler: { _ in
+            self.presentImagePicker(sourceType: .photoLibrary)
+            self.refreshUser = false
+        }))
 
-           // Cancel Option
-           actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        // Cancel Option
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+
+        // ✅ iPad-specific: Set sourceView and sourceRect
+        if let popoverController = actionSheet.popoverPresentationController {
+            popoverController.sourceView = self.view // or a specific button
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popoverController.permittedArrowDirections = []
+        }
+
         self.refreshUser = true
-           present(actionSheet, animated: true)
+        present(actionSheet, animated: true)
+
        }
 
        func presentImagePicker(sourceType: UIImagePickerController.SourceType) {

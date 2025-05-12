@@ -11,7 +11,7 @@ import GoogleSignIn
 //import UIKit
 
 class ViewModel {
-
+    var onUserSaved: (() -> Void)?
     func checkLoggedInUser(completion: @escaping (Bool) -> Void) {
         let user = UserManager.shared.fetchUser()
         if let email = user?.email, !email.isEmpty {
@@ -57,6 +57,10 @@ class ViewModel {
                 userData.profileImage = data
                 do {
                     try context.save()
+                    print("✅ User saved.")
+                           DispatchQueue.main.async {
+                               self.onUserSaved?()
+                           }
                     print("Google user data saved with profile image.")
                 } catch {
                     print("Failed to save user data: \(error.localizedDescription)")

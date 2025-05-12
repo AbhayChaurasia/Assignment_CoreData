@@ -37,3 +37,7 @@ struct ProductDetails: Codable {
         case description = "Description"
     }
 }
+
+
+
+
