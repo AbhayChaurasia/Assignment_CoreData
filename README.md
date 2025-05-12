@@ -15,7 +15,7 @@ A feature-rich iOS application demonstrating user authentication, offline data m
 ### 2. PDF Viewer
 - Displays PDF from a URL:
   [`BalanceSheet.pdf`](https://fssservices.bookxpert.co/GeneratedPDF/Companies/nadc/2024-2025/BalanceSheet.pdf)
-- Embedded PDF rendering using built-in support or 3rd-party PDFKit alternatives.
+- Embedded PDF rendering using built-in support webview.
 
 ### 3. Image Handling
 - Capture images using the device **Camera**.
@@ -27,7 +27,7 @@ A feature-rich iOS application demonstrating user authentication, offline data m
 - Stores API response in Core Data.
 - Includes:
   - **List View**
-  - **Update & Delete** actions
+  - **Delete** actions
   - **Validations & Error Handling**
 
 ### 5. Push Notifications (Local)
@@ -48,7 +48,7 @@ A feature-rich iOS application demonstrating user authentication, offline data m
 - **Local DB**: Core Data
 - **Authentication**: Firebase Google Sign-In
 - **Notifications**: Local notification 
-- **PDF Viewing**: PDFKit / 3rd-party viewer
+- **PDF Viewing**: Webview - WKKIT
 - **Image Handling**: UIImagePickerController
 - **Permissions**: Camera & Photo Library with runtime checks
 - **Theme Support**: Light Mode compatible
