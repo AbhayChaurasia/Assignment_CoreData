@@ -57,9 +57,12 @@ A feature-rich iOS application demonstrating user authentication, offline data m
 
  
 
-## 📸 App Screenshot
+## 📸 App Screenshot and Video
 
 ![App Screenshot](https://github.com/user-attachments/assets/7c2c3344-54db-4efd-9e55-c20707efb119)
+![AppVideo]([https://drive.google.com/file/d/1l0rKTZTVf_HN_kdXgrUW_s1GWmjPcPlo/view?usp=drive_link)
+
+
 
 
 ## 🔧 Setup Instructions
